@@ -2,15 +2,8 @@ import React from "react";
 import Qualities from "./qualities";
 import BookMark from "./bookmark";
 const User = ({
-  _id,
-  name,
-  qualities,
-  onDelete,
-  onHandleIcon,
-  profession,
-  completedMeetings,
-  rate,
-  bookmarck,
+  _id, name, qualities, onDelete, profession,
+   completedMeetings, rate,  bookmark, onHandleIcon
 }) => {
   return (
     <tr key={_id}>
@@ -24,19 +17,18 @@ const User = ({
       <td>{completedMeetings}</td>
       <td>{rate}</td>             
       <td>
-        <BookMark status={bookmarck} onClick={() => onHandleIcon(_id)} />
+        <BookMark status={bookmark} 
+        onClick={() => onHandleIcon(_id)} />
       </td>
       <td>             
         <button
           onClick={() => onDelete(_id)}
           className="btn bg-danger text-white btn-sm"
-        >
-          delete                  
+        > delete                  
         </button>
                 
       </td>
     </tr>
   );
 };
-
 export default User;
