@@ -8,6 +8,7 @@ const Users = ({ users, ...rest }) => {
         <table className="table">
           <thead>
             <tr>
+              <th/>
               <th scope="col">Имя</th>
               <th scope="col">Качества</th>
               <th scope="col">Профессия</th>

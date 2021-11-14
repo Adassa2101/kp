@@ -2,8 +2,8 @@ import React from "react";
 import Qualities from "./qualities";
 import BookMark from "./bookmark";
 const User = ({
-  _id, name, qualities, onDelete, profession,
-   completedMeetings, rate,  bookmark, onHandleIcon
+  _id, name, qualities, profession,
+   completedMeetings, rate, onDelete,  bookmark, onHandleIcon
 }) => {
   return (
     <tr key={_id}>
