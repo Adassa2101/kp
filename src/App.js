@@ -4,30 +4,29 @@ import SearchStatus from "./components/searchStatus";
 import api from "./api";
 
 function App() {
-  const [users, setUsers] = useState(api.users.fetchAll());
-  const handleDelete = (userId) => {
-   setUsers(users.filter((user) => user._id !== userId));
-  };
-  const HandleIcon = (id) =>
-    setUsers(
-      users.filter((user) => {
-        if (user._id === id) {
-          user.bookmark =!user.bookmark;
-          return user;
-        }
-        return user;
-      })
+    const [users, setUsers] = useState(api.users.fetchAll());
+    const handleDelete = (userId) => {
+        setUsers(users.filter((user) => user._id !== userId));
+    };
+    const HandleIcon = (id) =>
+        setUsers(
+            users.map((user) => {
+                if (user._id === id) {
+                    return { ...user, bookmark: !user.bookmark };
+                }
+                return user;
+            })
+        );
+    return (
+        <div>
+            <SearchStatus length={users.length} />
+            <Users
+                onDelete={handleDelete}
+                onHandleIcon={HandleIcon}
+                users={users}
+            />
+        </div>
     );
-  return (
-    <div>
-      <SearchStatus length={users.length} />
-      <Users 
-      onDelete={handleDelete} 
-      onHandleIcon={HandleIcon}
-      users={users} 
-      />
-    </div>
-  );
 }
 
 export default App;
