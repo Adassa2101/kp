@@ -18,15 +18,15 @@ const User = ({
     onHandleIcon
 }) => {
     return (
-        // eslint-disable-next-line no-trailing-spaces
-        <tr key={_id}> 
-            // eslint-disable-next-line indent
-            // eslint-disable-next-line indent
-             <td>{name}</td>
-            <td>            
+        <tr key={_id}>
+            <td>{name}</td>
+            <td>
+                {" "}
+                          
                 {qualities.map((qualitiy) => (
                     <Qualities key={qualitiy._id} {...qualitiy} />
-                ))}    
+                ))}
+                    
             </td>
             <td>{profession.name}</td>
             <td>{completedMeetings}</td>
